@@ -66,10 +66,10 @@ function checkGuess () {
         return
     }
 
-    if (!WORDS.includes(guessString)) {
-        toastr.error("Word not in list!")
-        return
-    }
+    // if (!WORDS.includes(guessString)) {
+    //     toastr.error("Word not in list!")
+    //     return
+    // }
 
     
     for (let i = 0; i < 5; i++) {
@@ -107,8 +107,8 @@ function checkGuess () {
     }
 
     if (guessString === rightGuessString) {
-        toastr.success("Got it!")
-        $("#scavanger").show();
+        // toastr.success("Got it!")
+        document.getElementById("scavenger").style.display = "block"
         guessesRemaining = 0
         return
     } else {
