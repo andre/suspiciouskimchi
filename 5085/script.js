@@ -1,4 +1,4 @@
-import { WORDS } from "./words.js";
+import { WORDS } from "./short_words.js";
 
 const NUMBER_OF_GUESSES = 6;
 let guessesRemaining = NUMBER_OF_GUESSES;
@@ -107,7 +107,8 @@ function checkGuess () {
     }
 
     if (guessString === rightGuessString) {
-        toastr.success("You guessed right! Game over!")
+        toastr.success("Got it!")
+        $("#scavanger").show();
         guessesRemaining = 0
         return
     } else {
