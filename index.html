@@ -16,14 +16,20 @@
         .container {
             text-align: center;
         }
+        .input-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
         input[type="number"] {
-            width: 80%;
+            width: 50%;
             padding: 10px;
-            margin: 10px 0;
+            margin: 10px 5px;
             font-size: 1.2em;
         }
         button {
-            padding: 10px 20px;
+            padding: 10px 30px;
+            margin: 10px 5px;
             font-size: 1.2em;
             background-color: #007BFF;
             color: white;
@@ -37,11 +43,11 @@
 </head>
 <body>
     <div class="container">
-        <label for="code">Enter code</label>
-        <input type="number" id="code" pattern="[0-9]*" inputmode="numeric">
-        <button onclick="validateCode()">Go</button>
+        <div class="input-container">
+            <input type="number" id="code" pattern="[0-9]*" inputmode="numeric" placeholder="Enter code">
+            <button onclick="validateCode()">Go</button>
+        </div>
     </div>
-
     <script>
         function validateCode() {
             const validCodes = ['5085', '5678', '91011']; // Add your valid codes here
