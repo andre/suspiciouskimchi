@@ -400,4 +400,5 @@ window.onload = function(){
 		canvas.height = height = window.innerHeight;
 		drawCanvas();
 	}
+	normalMode()
 }
