@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -39,24 +38,42 @@
         button:hover {
             background-color: #0056b3;
         }
+        button.disabled {
+            background-color: #6c757d;
+            cursor: not-allowed;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="input-container">
             <input type="number" id="code" pattern="[0-9]*" inputmode="numeric" placeholder="Enter code">
-            <button onclick="validateCode()">Go</button>
+            <button id="goButton" onclick="validateCode()">Go</button>
         </div>
     </div>
     <script>
+        document.getElementById('code').addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                validateCode();
+            }
+        });
+
         function validateCode() {
             const validCodes = ['5085', '3066', '8789']; // Add your valid codes here
             const code = document.getElementById('code').value;
+            const goButton = document.getElementById('goButton');
             
+            goButton.disabled = true;
+            goButton.classList.add('disabled');
+            goButton.textContent = '...';
+
             if (validCodes.includes(code)) {
-                window.location.href = '/'+code+'/'
+                window.location.href = '/' + code + '/';
             } else {
                 alert('Invalid code');
+                goButton.disabled = false;
+                goButton.classList.remove('disabled');
+                goButton.textContent = 'Go';
             }
         }
     </script>
