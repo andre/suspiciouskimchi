@@ -248,7 +248,7 @@ var drawCanvas = function(){
 		drawHidden();
 	drawBird();
 	drawScore();
-	if (score >= 7) {
+	if (score >= 5) {
 		window.location="success.html"
 	}
 }
